@@ -1,22 +1,20 @@
-# from textSummarizer.logging import logger
-
-# logger.info("Testing cusom logging for our project")
-
+import os
 import sys
-from textSummarizer.exception import CustomException
-from textSummarizer.logging import logging
+from pathlib import Path
+import urllib.request as request
+import zipfile
+from src.textSummarizer.logging import logging
+from src.textSummarizer.exception import CustomException
+from src.textSummarizer.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 
-def divide(x:int, y:int) -> int:
-    try:
-        output = x / y
-        return output
-        logging.info("output run successfully")
-        
-    except Exception as e:
-        raise CustomException(e,sys)
-        logging.info("error in calculations")
-    
 
-divide(4, 0)
-        
+STAGE_NAME = "Data Ingestion Stage"
 
+try:
+    logging.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    data_ingestion = DataIngestionTrainingPipeline()
+    data_ingestion.main()
+    logging.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<")
+except Exception as e:
+    logging.info(f"Error Occured during stage {STAGE_NAME}")
+    raise CustomException(e,sys)
