@@ -10,7 +10,6 @@ list_of_files = [
     ".github/workflows/.gitkeep",
     f"src/{project_name}/__init__.py",
     f"src/{project_name}/components/__init__.py",
-    f"src/{project_name}/components/data_ingestion.py",
     f"src/{project_name}/utils/__init__.py",
     f"src/{project_name}/utils/common.py",
     f"src/{project_name}/logging/__init__.py",
@@ -18,7 +17,6 @@ list_of_files = [
     f"src/{project_name}/config/__init__.py",
     f"src/{project_name}/config/configuration.py",
     f"src/{project_name}/pipeline/__init__.py",
-    f"src/{project_name}/pipeline/stage_01_data_ingestion.py",
     f"src/{project_name}/entity/__init__.py",
     f"src/{project_name}/constants/__init__.py",
     "config/config.yaml",
@@ -28,8 +26,7 @@ list_of_files = [
     "Dockerfile",
     "requirements.txt",
     "setup.py",
-    "research/trials.ipynb",
-    "research/01_data_ingestion.ipynb"
+    "research/trials.ipynb"
 ]
 
 for filepath in list_of_files:
