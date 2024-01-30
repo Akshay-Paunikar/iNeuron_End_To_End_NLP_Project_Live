@@ -8,8 +8,6 @@ from src.textSummarizer.entity import DataIngestionConfig, DataValidationConfig
 class DataValidation:
     def __init__(self, config: DataValidationConfig):
         self.config = config
-
-
     
     def validate_all_files_exist(self)-> bool:
         try:
